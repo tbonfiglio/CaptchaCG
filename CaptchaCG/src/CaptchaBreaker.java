@@ -13,7 +13,8 @@ public class CaptchaBreaker{
     		ITesseract tesseract = new Tesseract();
     		try{
     			String result = tesseract.doOCR(filteredImage);
-    			System.out.println(result);
+    			System.out.println("Input image:" + input.getPath());
+    			System.out.println("Text: " + result);
     		}
     		catch(TesseractException error){
     			System.err.println(error.getMessage());
