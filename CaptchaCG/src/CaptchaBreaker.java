@@ -1,5 +1,8 @@
 import java.io.File;
 import net.sourceforge.tess4j.*;
+	/* Tess4J is a Java wrapper for Tesseract.
+	 * http://static.googleusercontent.com/media/research.google.com/pt-BR//pubs/archive/33418.pdf 
+	 */
 
 public class CaptchaBreaker{
 
