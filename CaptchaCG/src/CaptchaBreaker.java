@@ -5,19 +5,16 @@ public class CaptchaBreaker{
 
     public static void main(String[] args) {
     	for(int i = 0; i < 10; i++){
-    		
+    		File image = new File("_in/" + i + ".jpg");
+    		/** TODO: Filters */
+    		ITesseract tesseract = new Tesseract();
+    		try{
+    			String result = tesseract.doOCR(image);
+    			System.out.println(result);
+    		}
+    		catch(TesseractException error){
+    			System.err.println(error.getMessage());
+    		}    		
     	}
-    	
-    	
-        File imageFile = new File("eurotext.tif");
-        ITesseract instance = new Tesseract();  // JNA Interface Mapping
-        // ITesseract instance = new Tesseract1(); // JNA Direct Mapping
-
-        try {
-            String result = instance.doOCR(imageFile);
-            System.out.println(result);
-        } catch (TesseractException e) {
-            System.err.println(e.getMessage());
-        }
     }
 }
